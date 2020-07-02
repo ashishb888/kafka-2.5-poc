@@ -32,11 +32,11 @@ kafka:
     linger.ms: 10
     compression.type: 'lz4'
     key.serializer: 'org.apache.kafka.common.serialization.LongSerializer'
-    #value.serializer: 'poc.kafka.serialization.PersonSerializer'
-    value.serializer: 'org.apache.kafka.common.serialization.ByteBufferSerializer'
+    value.serializer: 'poc.kafka.serialization.PersonSerializer'
+    #value.serializer: 'org.apache.kafka.common.serialization.ByteBufferSerializer'
     
   metaData:
-    topic: ksp4
+    topic: ksp5
     partitions: 0
     records: 10000000
     

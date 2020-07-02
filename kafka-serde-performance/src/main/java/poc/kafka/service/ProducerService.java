@@ -123,7 +123,7 @@ public class ProducerService {
 	public void main() {
 		log.debug("main service");
 
-		// produce();
-		produceByteBuffer();
+		produce();
+		// produceByteBuffer();
 	}
 }
