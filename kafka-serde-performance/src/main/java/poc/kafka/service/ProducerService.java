@@ -1,5 +1,6 @@
 package poc.kafka.service;
 
+import java.nio.ByteBuffer;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Arrays;
@@ -55,6 +56,30 @@ public class ProducerService {
 		log.debug("End: " + Instant.now());
 	}
 
+	private void produceByteBuffer() {
+		log.debug("produceByteBuffer service");
+
+		Producer<Long, ByteBuffer> producer = byteBufferProducer();
+		String topic = kp.getMetaData().get("topic");
+		int limit = Integer.valueOf(kp.getMetaData().get("records"));
+
+		benchmark();
+
+		log.debug("Start: " + Instant.now());
+
+		LongStream.iterate(0, i -> i + 1).limit(limit).forEach(i -> {
+			ByteBuffer bb = ByteBuffer.allocate(44);
+			bb.putLong(i);
+			bb.put(UUID.randomUUID().toString().getBytes());
+
+			producer.send(new ProducerRecord<Long, ByteBuffer>(topic, i, bb));
+
+			count.getAndIncrement();
+		});
+
+		log.debug("End: " + Instant.now());
+	}
+
 	private void benchmark() {
 		ScheduledExecutorService timer = Executors.newSingleThreadScheduledExecutor();
 
@@ -75,9 +100,30 @@ public class ProducerService {
 		return new KafkaProducer<>(kafkaProps);
 	}
 
+	private Producer<Long, ByteBuffer> byteBufferProducer() {
+
+		Properties kafkaProps = new Properties();
+
+		kp.getKafkaProducer().forEach((k, v) -> {
+			// log.debug("k: " + k + ", v: " + v);
+			kafkaProps.put(k, v);
+		});
+
+		return new KafkaProducer<>(kafkaProps);
+	}
+
+	public static String getStringFromByteBuffer(ByteBuffer byteBuffer, int offset, int length) {
+		byte[] bArr = new byte[length];
+		byteBuffer.position(offset);
+		byteBuffer.get(bArr, 0, length);
+
+		return new String(bArr);
+	}
+
 	public void main() {
 		log.debug("main service");
 
-		produce();
+		// produce();
+		produceByteBuffer();
 	}
 }

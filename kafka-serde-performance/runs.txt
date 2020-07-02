@@ -15,3 +15,13 @@ RUN 1: PersonSerializer
 2020-07-02 12:55:25.515 DEBUG 4685 --- [pool-1-thread-1] poc.kafka.service.ProducerService        : count: 10000000
 
 ----------=----------
+RUN 2: ByteBufferSerializer
+
+2020-07-02 15:09:33.723  INFO 5324 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 2.5.0
+2020-07-02 15:09:33.733  INFO 5324 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 66563e712b0b9f84
+2020-07-02 15:09:33.733  INFO 5324 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1593682773680
+2020-07-02 15:09:33.762 DEBUG 5324 --- [           main] poc.kafka.service.ProducerService        : Start: 2020-07-02T09:39:33.761157Z
+2020-07-02 15:09:34.587  INFO 5324 --- [work-thread | 8] org.apache.kafka.clients.Metadata        : [Producer clientId=8] Cluster ID: 1iOigCXUSiOTvQIPvOvsng
+2020-07-02 15:09:43.747 DEBUG 5324 --- [pool-1-thread-1] poc.kafka.service.ProducerService        : count: 5773871
+2020-07-02 15:09:50.261 DEBUG 5324 --- [           main] poc.kafka.service.ProducerService        : End: 2020-07-02T09:39:50.261883Z
+2020-07-02 15:09:53.747 DEBUG 5324 --- [pool-1-thread-1] poc.kafka.service.ProducerService        : count: 10000000
