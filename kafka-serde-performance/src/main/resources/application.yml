@@ -1,0 +1,43 @@
+spring:
+ application:
+  name: kafka-serde-performance
+
+logging:
+  level:
+    root: info
+    poc.kafka: debug  file: /var/tmp/apps/kafka-serde-performance/kafka-serde-performance
+
+kafka:
+  kafkaConsumer:
+    bootstrap.servers: 'localhost:9092' #Brokers
+    group.id: 'test-consumers'
+    enable.auto.commit: true
+    #auto.commit.interval.ms: 5000
+    fetch.min.bytes: 100000
+    session.timeout.ms: 60000
+    auto.offset.reset: 'earliest'
+    max.poll.records: 5000
+    key.deserializer: 'org.apache.kafka.common.serialization.LongDeserializer'
+    #value.deserializer: 'org.apache.kafka.common.serialization.ByteBufferDeserializer'
+    value.deserializer: 'poc.kafka.serialization.PersonDeserializer'
+
+  kafkaProducer:
+    #Kafka configuration changes according to the use cases
+    bootstrap.servers: 'localhost:9092' #Brokers
+    acks: 'all'
+    batch.size: 150000
+    buffer.memory: 33554432
+    client.id: 8
+    retries: 1
+    linger.ms: 10
+    compression.type: 'lz4'
+    key.serializer: 'org.apache.kafka.common.serialization.LongSerializer'
+    value.serializer: 'poc.kafka.serialization.PersonSerializer'
+    #value.serializer: 'assignments.kafka.common.serialization.StockTradeSerializer'
+    #value.serializer: 'org.apache.kafka.common.serialization.StringSerializer'
+    
+  metaData:
+    topic: ksp2
+    partitions: 0
+    records: 10000000
+    
