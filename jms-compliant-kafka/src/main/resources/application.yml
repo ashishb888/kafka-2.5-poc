@@ -1,0 +1,8 @@
+spring:
+ application:
+  name: jms-compliant-kafka
+
+logging:
+  level:
+    root: info
+    poc.kafka: debug  file: /var/tmp/apps/jms-compliant-kafka/jms-compliant-kafka
