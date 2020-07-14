@@ -1,0 +1,521 @@
+RUN 1
+
+ashish@LAPTOP-0CGC34A5:~/jms-compliant-kafka$ java -jar target/*.jar
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.3.1.RELEASE)
+
+2020-07-14 16:33:37.680  INFO 2741 --- [           main] poc.kafka.JmsCompliantKafkaApplication   : Starting JmsCompliantKafkaApplication v0.0.1-SNAPSHOT on LAPTOP-0CGC34A5 with PID 2741 (/mnt/d/work/git/kafka-2.5-poc/jms-compliant-kafka/target/jms-compliant-kafka-0.0.1-SNAPSHOT.jar started by ashish in /mnt/d/work/git/kafka-2.5-poc/jms-compliant-kafka)
+2020-07-14 16:33:37.721 DEBUG 2741 --- [           main] poc.kafka.JmsCompliantKafkaApplication   : Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-07-14 16:33:37.724  INFO 2741 --- [           main] poc.kafka.JmsCompliantKafkaApplication   : No active profile set, falling back to default profiles: default
+2020-07-14 16:33:48.354  INFO 2741 --- [           main] poc.kafka.JmsCompliantKafkaApplication   : Started JmsCompliantKafkaApplication in 17.031 seconds (JVM running for 21.237)
+2020-07-14 16:33:49.869  INFO 2741 --- [           main] io.confluent.license.LicenseStore        : Starting License Store
+2020-07-14 16:33:49.871  INFO 2741 --- [           main] o.a.kafka.connect.util.KafkaBasedLog     : Starting KafkaBasedLog with topic _confluent-command
+2020-07-14 16:33:49.920  INFO 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values:
+        bootstrap.servers = [localhost:9092]
+        client.dns.lookup = default
+        client.id = jms-client
+        connections.max.idle.ms = 300000
+        default.api.timeout.ms = 60000
+        metadata.max.age.ms = 300000
+        metric.reporters = []
+        metrics.num.samples = 2
+        metrics.recording.level = INFO
+        metrics.sample.window.ms = 30000
+        receive.buffer.bytes = 65536
+        reconnect.backoff.max.ms = 1000
+        reconnect.backoff.ms = 50
+        request.timeout.ms = 30000
+        retries = 2147483647
+        retry.backoff.ms = 100
+        sasl.client.callback.handler.class = null
+        sasl.jaas.config = null
+        sasl.kerberos.kinit.cmd = /usr/bin/kinit
+        sasl.kerberos.min.time.before.relogin = 60000
+        sasl.kerberos.service.name = null
+        sasl.kerberos.ticket.renew.jitter = 0.05
+        sasl.kerberos.ticket.renew.window.factor = 0.8
+        sasl.login.callback.handler.class = null
+        sasl.login.class = null
+        sasl.login.refresh.buffer.seconds = 300
+        sasl.login.refresh.min.period.seconds = 60
+        sasl.login.refresh.window.factor = 0.8
+        sasl.login.refresh.window.jitter = 0.05
+        sasl.mechanism = GSSAPI
+        security.protocol = PLAINTEXT
+        security.providers = null
+        send.buffer.bytes = 131072
+        ssl.cipher.suites = null
+        ssl.enabled.protocols = [TLSv1.2]
+        ssl.endpoint.identification.algorithm = https
+        ssl.key.password = null
+        ssl.keymanager.algorithm = SunX509
+        ssl.keystore.location = null
+        ssl.keystore.password = null
+        ssl.keystore.type = JKS
+        ssl.protocol = TLSv1.2
+        ssl.provider = null
+        ssl.secure.random.implementation = null
+        ssl.trustmanager.algorithm = PKIX
+        ssl.truststore.location = null
+        ssl.truststore.password = null
+        ssl.truststore.type = JKS
+
+2020-07-14 16:33:50.876  WARN 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : The configuration 'replication.factor' was supplied but isn't a known config.
+2020-07-14 16:33:50.882  WARN 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : The configuration 'ssl.protocol' was supplied but isn't a known config.
+2020-07-14 16:33:50.882  WARN 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : The configuration 'sasl.login.refresh.window.factor' was supplied but isn't a known config.
+2020-07-14 16:33:50.883  WARN 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : The configuration 'sasl.login.refresh.min.period.seconds' was supplied but isn't a known config.
+2020-07-14 16:33:50.884  WARN 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : The configuration 'sasl.login.refresh.buffer.seconds' was supplied but isn't a known config.
+2020-07-14 16:33:50.885  WARN 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : The configuration 'ssl.enabled.protocols' was supplied but isn't a known config.
+2020-07-14 16:33:50.886  WARN 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : The configuration 'sasl.kerberos.ticket.renew.window.factor' was supplied but isn't a known config.
+2020-07-14 16:33:50.887  WARN 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : The configuration 'sasl.kerberos.kinit.cmd' was supplied but isn't a known config.
+2020-07-14 16:33:50.888  WARN 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : The configuration 'ssl.truststore.type' was supplied but isn't a known config.
+2020-07-14 16:33:50.889  WARN 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : The configuration 'sasl.kerberos.ticket.renew.jitter' was supplied but isn't a known config.
+2020-07-14 16:33:50.890  WARN 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : The configuration 'ssl.keystore.type' was supplied but isn't a known config.
+2020-07-14 16:33:50.890  WARN 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : The configuration 'ssl.trustmanager.algorithm' was supplied but isn't a known config.
+2020-07-14 16:33:50.890  WARN 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : The configuration 'ssl.keymanager.algorithm' was supplied but isn't a known config.
+2020-07-14 16:33:50.891  WARN 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : The configuration 'sasl.kerberos.min.time.before.relogin' was supplied but isn't a known config.
+2020-07-14 16:33:50.891  WARN 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : The configuration 'sasl.login.refresh.window.jitter' was supplied but isn't a known config.
+2020-07-14 16:33:50.891  WARN 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : The configuration 'ssl.endpoint.identification.algorithm' was supplied but isn't a known config.
+2020-07-14 16:33:50.906  INFO 2741 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 2.5.0
+2020-07-14 16:33:50.907  INFO 2741 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 66563e712b0b9f84
+2020-07-14 16:33:50.908  INFO 2741 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1594724630892
+2020-07-14 16:33:53.814  INFO 2741 --- [           main] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values:
+        acks = -1
+        batch.size = 16384
+        bootstrap.servers = [localhost:9092]
+        buffer.memory = 33554432
+        client.dns.lookup = default
+        client.id = jms-client
+        compression.type = none
+        connections.max.idle.ms = 540000
+        delivery.timeout.ms = 120000
+        enable.idempotence = false
+        interceptor.classes = []
+        key.serializer = class io.confluent.license.LicenseStore$LicenseKeySerde
+        linger.ms = 0
+        max.block.ms = 60000
+        max.in.flight.requests.per.connection = 1
+        max.request.size = 1048576
+        metadata.max.age.ms = 300000
+        metadata.max.idle.ms = 300000
+        metric.reporters = []
+        metrics.num.samples = 2
+        metrics.recording.level = INFO
+        metrics.sample.window.ms = 30000
+        partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+        receive.buffer.bytes = 32768
+        reconnect.backoff.max.ms = 1000
+        reconnect.backoff.ms = 50
+        request.timeout.ms = 30000
+        retries = 2147483647
+        retry.backoff.ms = 100
+        sasl.client.callback.handler.class = null
+        sasl.jaas.config = null
+        sasl.kerberos.kinit.cmd = /usr/bin/kinit
+        sasl.kerberos.min.time.before.relogin = 60000
+        sasl.kerberos.service.name = null
+        sasl.kerberos.ticket.renew.jitter = 0.05
+        sasl.kerberos.ticket.renew.window.factor = 0.8
+        sasl.login.callback.handler.class = null
+        sasl.login.class = null
+        sasl.login.refresh.buffer.seconds = 300
+        sasl.login.refresh.min.period.seconds = 60
+        sasl.login.refresh.window.factor = 0.8
+        sasl.login.refresh.window.jitter = 0.05
+        sasl.mechanism = GSSAPI
+        security.protocol = PLAINTEXT
+        security.providers = null
+        send.buffer.bytes = 131072
+        ssl.cipher.suites = null
+        ssl.enabled.protocols = [TLSv1.2]
+        ssl.endpoint.identification.algorithm = https
+        ssl.key.password = null
+        ssl.keymanager.algorithm = SunX509
+        ssl.keystore.location = null
+        ssl.keystore.password = null
+        ssl.keystore.type = JKS
+        ssl.protocol = TLSv1.2
+        ssl.provider = null
+        ssl.secure.random.implementation = null
+        ssl.trustmanager.algorithm = PKIX
+        ssl.truststore.location = null
+        ssl.truststore.password = null
+        ssl.truststore.type = JKS
+        transaction.timeout.ms = 60000
+        transactional.id = null
+        value.serializer = class io.confluent.license.LicenseStore$LicenseMessageSerde
+
+2020-07-14 16:33:54.172  INFO 2741 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 2.5.0
+2020-07-14 16:33:54.174  INFO 2741 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 66563e712b0b9f84
+2020-07-14 16:33:54.175  INFO 2741 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1594724634172
+2020-07-14 16:33:54.275  INFO 2741 --- [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values:
+        allow.auto.create.topics = true
+        auto.commit.interval.ms = 5000
+        auto.offset.reset = earliest
+        bootstrap.servers = [localhost:9092]
+        check.crcs = true
+        client.dns.lookup = default
+        client.id = jms-client
+        client.rack =
+        connections.max.idle.ms = 540000
+        default.api.timeout.ms = 60000
+        enable.auto.commit = false
+        exclude.internal.topics = true
+        fetch.max.bytes = 52428800
+        fetch.max.wait.ms = 500
+        fetch.min.bytes = 1
+        group.id = null
+        group.instance.id = null
+        heartbeat.interval.ms = 3000
+        interceptor.classes = []
+        internal.leave.group.on.close = true
+        isolation.level = read_uncommitted
+        key.deserializer = class io.confluent.license.LicenseStore$LicenseKeySerde
+        max.partition.fetch.bytes = 1048576
+        max.poll.interval.ms = 300000
+        max.poll.records = 1024
+        metadata.max.age.ms = 300000
+        metric.reporters = []
+        metrics.num.samples = 2
+        metrics.recording.level = INFO
+        metrics.sample.window.ms = 30000
+        partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+        receive.buffer.bytes = 65536
+        reconnect.backoff.max.ms = 1000
+        reconnect.backoff.ms = 50
+        request.timeout.ms = 30000
+        retry.backoff.ms = 100
+        sasl.client.callback.handler.class = null
+        sasl.jaas.config = null
+        sasl.kerberos.kinit.cmd = /usr/bin/kinit
+        sasl.kerberos.min.time.before.relogin = 60000
+        sasl.kerberos.service.name = null
+        sasl.kerberos.ticket.renew.jitter = 0.05
+        sasl.kerberos.ticket.renew.window.factor = 0.8
+        sasl.login.callback.handler.class = null
+        sasl.login.class = null
+        sasl.login.refresh.buffer.seconds = 300
+        sasl.login.refresh.min.period.seconds = 60
+        sasl.login.refresh.window.factor = 0.8
+        sasl.login.refresh.window.jitter = 0.05
+        sasl.mechanism = GSSAPI
+        security.protocol = PLAINTEXT
+        security.providers = null
+        send.buffer.bytes = 131072
+        session.timeout.ms = 10000
+        ssl.cipher.suites = null
+        ssl.enabled.protocols = [TLSv1.2]
+        ssl.endpoint.identification.algorithm = https
+        ssl.key.password = null
+        ssl.keymanager.algorithm = SunX509
+        ssl.keystore.location = null
+        ssl.keystore.password = null
+        ssl.keystore.type = JKS
+        ssl.protocol = TLSv1.2
+        ssl.provider = null
+        ssl.secure.random.implementation = null
+        ssl.trustmanager.algorithm = PKIX
+        ssl.truststore.location = null
+        ssl.truststore.password = null
+        ssl.truststore.type = JKS
+        value.deserializer = class io.confluent.license.LicenseStore$LicenseMessageSerde
+
+2020-07-14 16:33:54.277  INFO 2741 --- [ad | jms-client] org.apache.kafka.clients.Metadata        : [Producer clientId=jms-client] Cluster ID: 1iOigCXUSiOTvQIPvOvsng
+2020-07-14 16:33:54.435  INFO 2741 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 2.5.0
+2020-07-14 16:33:54.436  INFO 2741 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 66563e712b0b9f84
+2020-07-14 16:33:54.436  INFO 2741 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1594724634434
+2020-07-14 16:33:54.463  INFO 2741 --- [           main] org.apache.kafka.clients.Metadata        : [Consumer clientId=jms-client, groupId=null] Cluster ID: 1iOigCXUSiOTvQIPvOvsng
+2020-07-14 16:33:54.515  INFO 2741 --- [           main] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=jms-client, groupId=null] Subscribed to partition(s): _confluent-command-0
+2020-07-14 16:33:54.568  INFO 2741 --- [           main] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=jms-client, groupId=null] Seeking to EARLIEST offset of partition _confluent-command-0
+2020-07-14 16:33:54.718  INFO 2741 --- [           main] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=jms-client, groupId=null] Resetting offset for partition _confluent-command-0 to offset 0.
+2020-07-14 16:33:54.722  INFO 2741 --- [           main] o.a.kafka.connect.util.KafkaBasedLog     : Finished reading KafkaBasedLog for topic _confluent-command
+2020-07-14 16:33:54.726  INFO 2741 --- [           main] o.a.kafka.connect.util.KafkaBasedLog     : Started KafkaBasedLog for topic _confluent-command
+2020-07-14 16:33:54.727  INFO 2741 --- [           main] io.confluent.license.LicenseStore        : Started License Store
+2020-07-14 16:33:55.410  INFO 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values:
+        bootstrap.servers = [localhost:9092]
+        client.dns.lookup = default
+        client.id = jms-client
+        connections.max.idle.ms = 300000
+        default.api.timeout.ms = 60000
+        metadata.max.age.ms = 300000
+        metric.reporters = []
+        metrics.num.samples = 2
+        metrics.recording.level = INFO
+        metrics.sample.window.ms = 30000
+        receive.buffer.bytes = 65536
+        reconnect.backoff.max.ms = 1000
+        reconnect.backoff.ms = 50
+        request.timeout.ms = 30000
+        retries = 2147483647
+        retry.backoff.ms = 100
+        sasl.client.callback.handler.class = null
+        sasl.jaas.config = null
+        sasl.kerberos.kinit.cmd = /usr/bin/kinit
+        sasl.kerberos.min.time.before.relogin = 60000
+        sasl.kerberos.service.name = null
+        sasl.kerberos.ticket.renew.jitter = 0.05
+        sasl.kerberos.ticket.renew.window.factor = 0.8
+        sasl.login.callback.handler.class = null
+        sasl.login.class = null
+        sasl.login.refresh.buffer.seconds = 300
+        sasl.login.refresh.min.period.seconds = 60
+        sasl.login.refresh.window.factor = 0.8
+        sasl.login.refresh.window.jitter = 0.05
+        sasl.mechanism = GSSAPI
+        security.protocol = PLAINTEXT
+        security.providers = null
+        send.buffer.bytes = 131072
+        ssl.cipher.suites = null
+        ssl.enabled.protocols = [TLSv1.2]
+        ssl.endpoint.identification.algorithm = https
+        ssl.key.password = null
+        ssl.keymanager.algorithm = SunX509
+        ssl.keystore.location = null
+        ssl.keystore.password = null
+        ssl.keystore.type = JKS
+        ssl.protocol = TLSv1.2
+        ssl.provider = null
+        ssl.secure.random.implementation = null
+        ssl.trustmanager.algorithm = PKIX
+        ssl.truststore.location = null
+        ssl.truststore.password = null
+        ssl.truststore.type = JKS
+
+2020-07-14 16:33:55.425  WARN 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : The configuration 'replication.factor' was supplied but isn't a known config.
+2020-07-14 16:33:55.426  WARN 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : The configuration 'ssl.protocol' was supplied but isn't a known config.
+2020-07-14 16:33:55.427  WARN 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : The configuration 'sasl.login.refresh.window.factor' was supplied but isn't a known config.
+2020-07-14 16:33:55.428  WARN 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : The configuration 'sasl.login.refresh.min.period.seconds' was supplied but isn't a known config.
+2020-07-14 16:33:55.428  WARN 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : The configuration 'sasl.login.refresh.buffer.seconds' was supplied but isn't a known config.
+2020-07-14 16:33:55.429  WARN 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : The configuration 'ssl.enabled.protocols' was supplied but isn't a known config.
+2020-07-14 16:33:55.429  WARN 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : The configuration 'sasl.kerberos.ticket.renew.window.factor' was supplied but isn't a known config.
+2020-07-14 16:33:55.429  WARN 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : The configuration 'sasl.kerberos.kinit.cmd' was supplied but isn't a known config.
+2020-07-14 16:33:55.430  WARN 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : The configuration 'ssl.truststore.type' was supplied but isn't a known config.
+2020-07-14 16:33:55.430  WARN 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : The configuration 'sasl.kerberos.ticket.renew.jitter' was supplied but isn't a known config.
+2020-07-14 16:33:55.431  WARN 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : The configuration 'ssl.keystore.type' was supplied but isn't a known config.
+2020-07-14 16:33:55.431  WARN 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : The configuration 'ssl.trustmanager.algorithm' was supplied but isn't a known config.
+2020-07-14 16:33:55.431  WARN 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : The configuration 'ssl.keymanager.algorithm' was supplied but isn't a known config.
+2020-07-14 16:33:55.431  WARN 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : The configuration 'sasl.kerberos.min.time.before.relogin' was supplied but isn't a known config.
+2020-07-14 16:33:55.432  WARN 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : The configuration 'sasl.login.refresh.window.jitter' was supplied but isn't a known config.
+2020-07-14 16:33:55.432  WARN 2741 --- [           main] o.a.k.clients.admin.AdminClientConfig    : The configuration 'ssl.endpoint.identification.algorithm' was supplied but isn't a known config.
+2020-07-14 16:33:55.433  INFO 2741 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 2.5.0
+2020-07-14 16:33:55.433  INFO 2741 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 66563e712b0b9f84
+2020-07-14 16:33:55.434  INFO 2741 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1594724635433
+2020-07-14 16:33:56.478  INFO 2741 --- [           main] io.confluent.license.LicenseManager      : License for single cluster, single node
+2020-07-14 16:33:56.740  INFO 2741 --- [           main] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values:
+        acks = 1
+        batch.size = 16384
+        bootstrap.servers = [localhost:9092]
+        buffer.memory = 33554432
+        client.dns.lookup = default
+        client.id = jms-client-420b2f44-971e-4ce8-803c-c82bbd20d994
+        compression.type = none
+        connections.max.idle.ms = 540000
+        delivery.timeout.ms = 120000
+        enable.idempotence = false
+        interceptor.classes = []
+        key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+        linger.ms = 0
+        max.block.ms = 60000
+        max.in.flight.requests.per.connection = 5
+        max.request.size = 1048576
+        metadata.max.age.ms = 300000
+        metadata.max.idle.ms = 300000
+        metric.reporters = []
+        metrics.num.samples = 2
+        metrics.recording.level = INFO
+        metrics.sample.window.ms = 30000
+        partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+        receive.buffer.bytes = 32768
+        reconnect.backoff.max.ms = 1000
+        reconnect.backoff.ms = 50
+        request.timeout.ms = 30000
+        retries = 2147483647
+        retry.backoff.ms = 100
+        sasl.client.callback.handler.class = null
+        sasl.jaas.config = null
+        sasl.kerberos.kinit.cmd = /usr/bin/kinit
+        sasl.kerberos.min.time.before.relogin = 60000
+        sasl.kerberos.service.name = null
+        sasl.kerberos.ticket.renew.jitter = 0.05
+        sasl.kerberos.ticket.renew.window.factor = 0.8
+        sasl.login.callback.handler.class = null
+        sasl.login.class = null
+        sasl.login.refresh.buffer.seconds = 300
+        sasl.login.refresh.min.period.seconds = 60
+        sasl.login.refresh.window.factor = 0.8
+        sasl.login.refresh.window.jitter = 0.05
+        sasl.mechanism = GSSAPI
+        security.protocol = PLAINTEXT
+        security.providers = null
+        send.buffer.bytes = 131072
+        ssl.cipher.suites = null
+        ssl.enabled.protocols = [TLSv1.2]
+        ssl.endpoint.identification.algorithm = https
+        ssl.key.password = null
+        ssl.keymanager.algorithm = SunX509
+        ssl.keystore.location = null
+        ssl.keystore.password = null
+        ssl.keystore.type = JKS
+        ssl.protocol = TLSv1.2
+        ssl.provider = null
+        ssl.secure.random.implementation = null
+        ssl.trustmanager.algorithm = PKIX
+        ssl.truststore.location = null
+        ssl.truststore.password = null
+        ssl.truststore.type = JKS
+        transaction.timeout.ms = 60000
+        transactional.id = null
+        value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+2020-07-14 16:33:56.748  INFO 2741 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 2.5.0
+2020-07-14 16:33:56.750  INFO 2741 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 66563e712b0b9f84
+2020-07-14 16:33:56.751  INFO 2741 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1594724636748
+2020-07-14 16:33:56.759  INFO 2741 --- [3c-c82bbd20d994] org.apache.kafka.clients.Metadata        : [Producer clientId=jms-client-420b2f44-971e-4ce8-803c-c82bbd20d994] Cluster ID: 1iOigCXUSiOTvQIPvOvsng
+2020-07-14 16:34:00.273  INFO 2741 --- [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values:
+        allow.auto.create.topics = true
+        auto.commit.interval.ms = 5000
+        auto.offset.reset = earliest
+        bootstrap.servers = [localhost:9092]
+        check.crcs = true
+        client.dns.lookup = default
+        client.id = jms-client-0b3dd408-30fe-4395-82db-355474922f83
+        client.rack =
+        connections.max.idle.ms = 540000
+        default.api.timeout.ms = 60000
+        enable.auto.commit = false
+        exclude.internal.topics = true
+        fetch.max.bytes = 52428800
+        fetch.max.wait.ms = 500
+        fetch.min.bytes = 1
+        group.id = confluent-jms
+        group.instance.id = null
+        heartbeat.interval.ms = 3000
+        interceptor.classes = []
+        internal.leave.group.on.close = true
+        isolation.level = read_uncommitted
+        key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+        max.partition.fetch.bytes = 1048576
+        max.poll.interval.ms = 300000
+        max.poll.records = 1024
+        metadata.max.age.ms = 300000
+        metric.reporters = []
+        metrics.num.samples = 2
+        metrics.recording.level = INFO
+        metrics.sample.window.ms = 30000
+        partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+        receive.buffer.bytes = 65536
+        reconnect.backoff.max.ms = 1000
+        reconnect.backoff.ms = 50
+        request.timeout.ms = 30000
+        retry.backoff.ms = 100
+        sasl.client.callback.handler.class = null
+        sasl.jaas.config = null
+        sasl.kerberos.kinit.cmd = /usr/bin/kinit
+        sasl.kerberos.min.time.before.relogin = 60000
+        sasl.kerberos.service.name = null
+        sasl.kerberos.ticket.renew.jitter = 0.05
+        sasl.kerberos.ticket.renew.window.factor = 0.8
+        sasl.login.callback.handler.class = null
+        sasl.login.class = null
+        sasl.login.refresh.buffer.seconds = 300
+        sasl.login.refresh.min.period.seconds = 60
+        sasl.login.refresh.window.factor = 0.8
+        sasl.login.refresh.window.jitter = 0.05
+        sasl.mechanism = GSSAPI
+        security.protocol = PLAINTEXT
+        security.providers = null
+        send.buffer.bytes = 131072
+        session.timeout.ms = 10000
+        ssl.cipher.suites = null
+        ssl.enabled.protocols = [TLSv1.2]
+        ssl.endpoint.identification.algorithm = https
+        ssl.key.password = null
+        ssl.keymanager.algorithm = SunX509
+        ssl.keystore.location = null
+        ssl.keystore.password = null
+        ssl.keystore.type = JKS
+        ssl.protocol = TLSv1.2
+        ssl.provider = null
+        ssl.secure.random.implementation = null
+        ssl.trustmanager.algorithm = PKIX
+        ssl.truststore.location = null
+        ssl.truststore.password = null
+        ssl.truststore.type = JKS
+        value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+2020-07-14 16:34:00.411  INFO 2741 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 2.5.0
+2020-07-14 16:34:00.412  INFO 2741 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 66563e712b0b9f84
+2020-07-14 16:34:00.413  INFO 2741 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1594724640411
+2020-07-14 16:34:00.443  INFO 2741 --- [           main] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=jms-client-0b3dd408-30fe-4395-82db-355474922f83, groupId=confluent-jms] Subscribed to topic(s): jms-test
+2020-07-14 16:34:00.518  INFO 2741 --- [pool-1-thread-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=jms-client-0b3dd408-30fe-4395-82db-355474922f83, groupId=confluent-jms] Cluster ID: 1iOigCXUSiOTvQIPvOvsng
+2020-07-14 16:34:00.523  INFO 2741 --- [pool-1-thread-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=jms-client-0b3dd408-30fe-4395-82db-355474922f83, groupId=confluent-jms] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+2020-07-14 16:34:00.545  INFO 2741 --- [pool-1-thread-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=jms-client-0b3dd408-30fe-4395-82db-355474922f83, groupId=confluent-jms] (Re-)joining group
+2020-07-14 16:34:00.628  INFO 2741 --- [pool-1-thread-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=jms-client-0b3dd408-30fe-4395-82db-355474922f83, groupId=confluent-jms] Join group failed with org.apache.kafka.common.errors.MemberIdRequiredException: The group member needs to have a valid member id before actually entering a consumer group
+2020-07-14 16:34:00.629  INFO 2741 --- [pool-1-thread-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=jms-client-0b3dd408-30fe-4395-82db-355474922f83, groupId=confluent-jms] (Re-)joining group
+2020-07-14 16:34:00.681  INFO 2741 --- [pool-1-thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=jms-client-0b3dd408-30fe-4395-82db-355474922f83, groupId=confluent-jms] Finished assignment for group at generation 5: {jms-client-0b3dd408-30fe-4395-82db-355474922f83-41006caa-02b6-4e60-bf1f-d8017a5afd2d=Assignment(partitions=[jms-test-0])}
+2020-07-14 16:34:00.703  INFO 2741 --- [pool-1-thread-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=jms-client-0b3dd408-30fe-4395-82db-355474922f83, groupId=confluent-jms] Successfully joined group with generation 5
+2020-07-14 16:34:00.709  INFO 2741 --- [pool-1-thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=jms-client-0b3dd408-30fe-4395-82db-355474922f83, groupId=confluent-jms] Adding newly assigned partitions: jms-test-0
+2020-07-14 16:34:00.749  INFO 2741 --- [pool-1-thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=jms-client-0b3dd408-30fe-4395-82db-355474922f83, groupId=confluent-jms] Setting offset for partition jms-test-0 to the committed offset FetchPosition{offset=100, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 0 rack: null)], epoch=0}}
+803e7fca-88de-427e-9db6-6888266f4a35
+e84de73a-cae0-4421-93f5-0ca91cdce198
+9679db05-8ad8-42ea-80ab-b92ce773638e
+f482ebcc-14fc-4a8e-b5d4-0469b9869425
+7f744188-72ab-4323-a828-fd5872ceb435
+3907caf0-d53b-4ff3-b03c-4d7cfa76b007
+36e401f9-2cd2-4e8c-bebf-be403f6878f2
+190cd78f-1193-4971-bee9-0aea64cf24c4
+0d786f61-77bc-4c88-bede-2ed9f74e460d
+32ff10ba-62a1-457a-b532-a75c91e0f04a
+2aaafd48-ec78-442b-a89d-a617bb436b14
+ff9ac98c-6c75-4689-ae1a-7dc80a37a180
+c3ccf19c-6683-4888-a3d8-466d94ee7891
+a12a2123-9821-47e1-8064-86714aa754ac
+2cddbd45-20ca-4984-a573-c9d585a1faeb
+7663b0a1-e801-430a-ba0e-2a97091bbecb
+e00d0519-7be4-44df-bdca-9bb616d925b0
+40eefeba-53c6-41ea-9385-1212351bc001
+800126ca-0c2c-4caa-af3e-f97437aeb7ee
+622a7841-2007-4e5a-bb6a-ab7ac6aba5ad
+ab919b1b-b6f4-49fa-a742-1f27614306fb
+113546ae-8ff4-48a5-b73c-e26b2967e935
+057cc063-a0a6-4373-8ca4-64b573cecbf4
+e9025afa-04e2-47bf-9a36-0e477b0fec16
+85612808-7cdd-4147-8c35-a31ed3681612
+f8300e6e-f85f-4760-846a-63ce164920ea
+97063d09-26dd-4d45-95b9-6db8c5c4bd96
+d3d1f384-2115-46b4-b1cf-0159afa77c99
+9d7413a9-f54e-40ef-9f13-f3cec5756d5c
+1f187d62-5f1b-4712-8b0a-89bff383fc79
+b971cd6f-7885-40aa-991d-11425e059be4
+9bb2038c-8c57-4831-ba30-ffbb665ec811
+bbce0c34-fc67-4e74-ad7c-c03ae8c37f31
+337ada58-9933-4fd8-862c-8cc38c9bb13b
+02a86978-889e-4ffd-9c6a-15225ded8fb2
+947443c9-edb6-495c-9fca-3669d7d6bde5
+7e6fd61e-075d-4931-9616-3ee8ee392dd2
+2a4c3394-e2c2-4e62-a038-9edd0c2b9d5a
+17de342e-34e8-4a64-8830-7a387fd60ac5
+76342537-c18f-40b9-bad1-cdbdfbead96e
+d63e1365-d80b-4ae4-a610-7ff66a052a47
+ac06903f-e0f1-4dfb-b568-cf7f674aad23
+2ffca44a-e7a6-4c23-b67e-440704cb42fe
+74c50680-f22a-4f36-b876-256bcddd8560
+e4dac723-16d1-412d-8764-af1b9dd08b78
+cee65bd5-d487-4a80-a052-6cc3aeaede10
+0631766c-96d3-4fb7-82f9-4b2915be5e92
+5bba8260-4c02-4d01-8c08-d16bfbb1b8b5
+123ee93f-4d1a-4026-ae09-a2684ed01da3
+5d7c49bf-5ab5-4043-af35-4c1714b90ac5
+
+----------
+
+ashish@LAPTOP-0CGC34A5:~/sw/kafka_2.12-2.5.0$ ./bin/kafka-run-class.sh kafka.tools.GetOffsetShell --broker-list  localhost:9092  --topic jms-test  --time -1 --offsets 1
+ | awk -F ":" '{sum += $3} END {print sum'}
+50
+----------=----------
