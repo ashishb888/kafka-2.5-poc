@@ -42,4 +42,4 @@ kafka:
     value.serializer: 'poc.kafka.serialization.MessageSerializer'
     
   metaData:
-    toTopic: message-to-send    fromTopic: message-status1
+    toTopic: message-to-send3    fromTopic: message-status3

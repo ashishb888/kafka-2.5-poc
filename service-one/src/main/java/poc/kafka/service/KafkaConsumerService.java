@@ -12,6 +12,8 @@ import javax.annotation.PostConstruct;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
@@ -21,6 +23,7 @@ import poc.kafka.properties.KafkaProperties;
 
 @Service
 public class KafkaConsumerService {
+	private Logger log = LoggerFactory.getLogger(KafkaConsumerService.class);
 	@Autowired
 	private KafkaProperties kp;
 	String fromTopic;
@@ -36,11 +39,12 @@ public class KafkaConsumerService {
 
 			while (consume.get()) {
 				ConsumerRecords<Long, MessageStatus> records = consumer.poll(Duration.ofMillis(10));
-				List<MessageStatus> list = new ArrayList<>();
-				records.forEach(r -> list.add(r.value()));
-				batchUpdate(list);
+				if (!records.isEmpty()) {
+					List<MessageStatus> list = new ArrayList<>();
+					records.forEach(r -> list.add(r.value()));
+					batchUpdate(list);
+				}
 			}
-
 		});
 
 		t.setName("message-consumer");
@@ -48,13 +52,15 @@ public class KafkaConsumerService {
 	}
 
 	private void batchUpdate(Iterable<MessageStatus> list) {
+		log.debug("list: " + list);
+
 		List<Object[]> batch = new ArrayList<Object[]>();
 		for (MessageStatus messageStatus : list) {
 			Object[] values = new Object[] { messageStatus.getMessageId(), messageStatus.getStatus() };
 			batch.add(values);
 		}
 
-		jdbcTemplate.batchUpdate("INSERT INTO MESSAGE_STATUS (ID, STATUS) VALUES (?,?)", batch);
+		jdbcTemplate.batchUpdate("INSERT INTO MESSAGE_STATUS (MESSAGEID, STATUS) VALUES (?,?)", batch);
 	}
 
 	private Consumer<Long, MessageStatus> consumer() {

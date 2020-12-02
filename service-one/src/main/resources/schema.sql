@@ -8,6 +8,6 @@ create table message(
 create table message_status (
     messageId bigint primary key,
     status varchar(10) not null,
-    constraint fk_message_message_status foreign key(id) references message(id)
+    constraint fk_message_message_status foreign key(messageId) references message(id)
 );
 
