@@ -19,13 +19,11 @@ kafka:
     bootstrap.servers: 'localhost:9092' #Brokers
     group.id: 'service-one-consumers'
     enable.auto.commit: true
-    #auto.commit.interval.ms: 5000
     fetch.min.bytes: 100000
     session.timeout.ms: 60000
     auto.offset.reset: 'earliest'
     max.poll.records: 5000
     key.deserializer: 'org.apache.kafka.common.serialization.LongDeserializer'
-    #value.deserializer: 'org.apache.kafka.common.serialization.ByteBufferDeserializer'
     value.deserializer: 'poc.kafka.serialization.MessageStatusDeserializer'
 
   kafkaProducer:
@@ -34,7 +32,6 @@ kafka:
     acks: 'all'
     batch.size: 150000
     buffer.memory: 33554432
-    #client.id: 8
     retries: 1
     linger.ms: 10
     compression.type: 'lz4'
