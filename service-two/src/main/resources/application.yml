@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: service-two
+    
+logging:  file:    name: /var/tmp/logs/${spring.application.name}/${spring.application.name}.log
+  level:    root: info
+    poc.kafka: debug
+ 
+kafka:
+  kafkaStreams:
+    bootstrap.servers: 'localhost:9092'
+    application.id: 'service-two'
+    
+  metaData:
+    toTopic: message-status1
+    fromTopic: message-to-send
