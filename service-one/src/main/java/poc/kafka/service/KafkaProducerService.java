@@ -22,8 +22,8 @@ import poc.kafka.domain.MessageRowMapper;
 import poc.kafka.properties.KafkaProperties;
 
 @Service
-public class KafkaService {
-	private Logger log = LoggerFactory.getLogger(KafkaService.class);
+public class KafkaProducerService {
+	private Logger log = LoggerFactory.getLogger(KafkaProducerService.class);
 	@Autowired
 	private KafkaProperties kp;
 	Producer<Long, Message> producer;

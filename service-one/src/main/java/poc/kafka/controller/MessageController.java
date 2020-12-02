@@ -33,8 +33,4 @@ public class MessageController {
 		return new Response("success",
 				Collections.singletonMap("DB_SUC", "Successfully inserted messages into database"));
 	}
-
-	/*
-	 * @GetMapping public Iterable<Message> findAll() { return mr.findAll(); }
-	 */
 }
