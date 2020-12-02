@@ -12,5 +12,5 @@ kafka:
     application.id: 'service-two'
     
   metaData:
-    toTopic: message-status1
-    fromTopic: message-to-send
+    toTopic: message-status3
+    fromTopic: message-to-send3
